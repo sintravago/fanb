@@ -112,16 +112,15 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <input type="text" placeholder="Nombre de Usuario" class="form-control">
+              <input type="text" placeholder="Nombre de Usuario" class="form-control" name="username" id="id_username">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Contraseña" class="form-control">
+              <input type="password" placeholder="Contraseña" class="form-control" name="password" id="id_password">
             </div>
              <div class="loginbox">
               <label><input type="checkbox"><span>Recuérdame</span></label>
-              <button class="btn signin-btn" type="button">Regístrate</button>
+              <button class="btn signin-btn" type="submit">Regístrate</button>
             </div>                    
-          </form>
         </div>
         <div class="modal-footer footer-box">
           <a href="#">Se te olvidó tu contraseña ?</a>
@@ -158,6 +157,7 @@
         </div>
       </div>
     </div>
+  </form>
   </div>
   <!-- BEGIN MENU -->
   <section id="menu-area">      
@@ -193,7 +193,7 @@
             </li>
             <!--<li><a href="servicios.php">Servicios</a></li>-->
              <li><a href="tienda_virtual.php">Tienda Virtual</a></li>
-            <li><a href="noticia.php">Noticias</a></li>
+            <li><a href="{% url 'news:news' %}">Noticias</a></li>
            <!-- <li><a href="portfolio.html">Portfolio</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Noticia <span class="fa fa-angle-down"></span></a>

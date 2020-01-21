@@ -1,0 +1,133 @@
+{% extends 'core/base2.html' %}
+{% block page-title %}Sobre nosotros{% endblock %}
+{% block page-subtitle %}Nuestra Institución{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+  
+  <!-- Start about  -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Sobre nosotros</h2>
+            <span class="line"></span>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+          </div>
+        </div>-->
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="why-choose-us">
+                  <h3>Caja de Ahorro del Ejercito Bolivariano</h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            RESEÑA HISTÓRICA CAEJERB <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <img class="why-choose-img" src="{% static 'core/images/logo.png' %}" alt="img">
+                         <p>La Caja de Ahorro del Ejercito Bolivariano (CAEJERB) fue fundada el 13 de Junio del año 2007,
+							durante el período presidencial de nuestro Comandante Supremo y Eterno Hugo Rafael Chávez
+							Frías, con la misión de incentivar el ahorro sistemático del personal militar del Ejército Bolivariano
+							y estimular la formación de hábitos de previsión social, procurando el mejoramiento constante de
+							la economía familiar de sus asociados, para fortalecer el desarrollo financiero del país. La Caja de
+							Ahorro del Ejercito, ha logrado implementar una nueva filosofía institucional, con la creación de
+							una serie de empresas que marcaron las bases del desarrollo de la organización militar y del futuro
+							de sus asociados, que permitió trascender de una asociación civil para el ahorro a un
+							conglomerado de empresas, posicionadas en el mercado, con la firme intención de garantizar la
+							suprema felicidad del pueblo y la familia milita r. Es así, como la CAEJERB , se constituye en
+							una organización generadora de beneficios socioeconómicos, que ha venido consolidando su
+							estructura, sus inversiones y sus espacios en pro del pueblo hecho soldado y del Ejército como su
+							principal bastión, en el marco de la guía de planeamiento de nuestro Comandante General del
+							Ejército Bolivariano, M/G Jesús Rafael Suarez Chourio.</p>
+
+							<p>Nuestra gestión empresarial, de impulsar un Ejército productivo, se fundamenta en el marco de las
+							políticas públicas emitidas por el Presidente de la República Bolivariana de Venezuela y
+							Comandante en Jefe de la FANB, Ciudadano Nicolás Maduro Moros, en la agenda económica de la
+							patria con sus 15 Motores, con los relacionados con la Industria Militar, Agroalimentario,
+							Construcción, Farmacéutico, Exportaciones y Nuevas Fuentes de Divisas, Economía Comunal Social
+							y Socialista, en concordancia a los principios de autodeterminación de los pueblos, cooperación y
+							corresponsabilidad, derivados del Pensamiento Bolivariano, Socialista, Humanista y Chavista que
+							logró consolidarse en el Plan de la Patria 2013-2019.</p>
+
+							<p>Producto del esfuerzo mancomunado del Estado con instituciones públicas y privadas; el Ejército
+							Bolivariano a través de la Caja de Ahorro, ha materializado alianzas y convenios, mediante los
+							cuales se han desarrollado proyectos en el sector producción, distribución, importación,
+							exportación, comercialización, prestación de servicios, salud, recreación y esparcimiento.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Misión <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Establecer, fomentar y mantener el hábito de ahorro entre sus afiliados a los fines de
+							lograr la protección económica y social de los mismo, la cual fundamenta su organización
+							y su funcionamiento en los términos establecidos en estos Estatutos, en los principios
+							generales que orientan el movimiento cooperativo, la Ley de Cajas de Ahorros, Fondos de
+							Ahorros y Asociaciones de Ahorro similares y demás normas legales y reglamentarias que
+							regulan la materia.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Visión <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Ser la mejor Caja de Ahorros del sector militar, que ofrezca de manera eficiente y
+							solidaria, variados servicios en beneficio de sus afiliados, que les garantice que el haber
+							invertido sus ahorros en el tiempo de permanencia en la misma, ha sido beneficioso.</p>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            Marco Jurídico Legal <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <img class="why-choose-img" src="assets/images/ley.png" alt="img">
+                          <p>Puedes descargar aquí la LEY DE CAJAS DE AHORRO Y FONDOS DE AHORRO </p>
+                          <a class="purchase-btn" href="http://fanb.fonpresciv.net.ve/descargas/LEY_DE_CAJAS_DE_AHORRO.pdf">Descargar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+{% endblock %}

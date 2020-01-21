@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+    {% block header %}
+        {% load static %}
+        <!-- Start single page header -->
+    <section id="single-page-header">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="single-page-header-left">
+          
+              <h2>{% block page-title %}Sobre nosotros{% endblock %}</h2>
+              <p>{% block page-subtitle %}Nuestra Institución{% endblock %}</p>
+              </div>
+            </div>
+          <!-- <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="single-page-header-right">
+                <ol class="breadcrumb">
+                  <li><a href="#">Home</a></li>
+                  <li class="active">Service</li>
+                </ol>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End single page header -->
+  {% endblock %}

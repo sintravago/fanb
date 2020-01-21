@@ -1,0 +1,114 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+  
+  <!-- Start about  -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Sobre nosotros</h2>
+            <span class="line"></span>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+          </div>
+        </div>-->
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="why-choose-us">
+                  <h3>FARMA EJERB</h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            FARMA EJERB <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <img class="why-choose-img" src="{% static 'core/images/EMPR3-TRANS.png' %}" alt="img">
+                         <p>  </p>
+
+                        
+                      </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                           Misión <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Superar las expectativas de nuestros clientes, proporcionando un ambiente de armonía y bienestar, brindando un servicio de calidad y una gran gama de productos con un alto contenido de innovación que permita dar la mejor solución a cada problema.  </p>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Visión <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Ser reconocida como la primera opción de salud y bienestar para toda la población.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Estructura  Organizacional  <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            Producto <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            
+                          <p> </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+{% endblock %}

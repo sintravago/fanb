@@ -1,0 +1,174 @@
+{% extends 'core/base2.html' %}
+{% block page-title %}NUESTRAS EMPRESAS{% endblock %}
+{% block page-subtitle %} {% endblock %}
+{% block content %}
+{% load static %}
+  
+  <!-- Start about  -->
+ <!-- <section id="about">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Sobre nosotros</h2>
+            <span class="line"></span>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+          </div>
+        </div>-->
+      <!--  <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="why-choose-us">
+                  <h3>Empresas </h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            CORPORACIÓN DE TRANSPORTE CAEJERB <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <img class="why-choose-img" src="assets/images/EMPR2-TRANS.png" alt="img">
+                         <p>Corporación dedicada al traslado y distribución de todos los rubros de la Agenda Económica Bolivariana.</p>
+
+              <p></p>
+
+              <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            EMPRESA DE PRODUCCIÓN CAEJERB <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <img class="why-choose-img" src="assets/images/EMPR1-TRANS.png" alt="img">
+                         <p>Empresa dedicada a la compra, venta, comercialización, distribución, importación y exportación de todo tipo de materias primas para la elaboración de todo lo relacionado al ramo industrial textil.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            FARMA EJERB <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <img class="why-choose-img" src="assets/images/EMPR3-TRANS.png" alt="img">
+                         <p>Empresa de Farmacia de la Caja de Ahorro del Ejército Bolivariano.</p>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            COMPAÑÍA VENEZOLANA DE LOGÍSTICA <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <img class="why-choose-img" src="assets/images/EMPR5-TRANS.png" alt="img">
+                         <p>Conglomerado de compañías dedicadas a prestar servicio logístico y acompañamiento en la cadena de importación y exportación en los cuatro puertos más importantes del país.</p>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                            ALIMENTOS CAEJERB <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <img class="why-choose-img" src="assets/images/EMPR4-TRANS.png" alt="img">
+                         <p>Empresa dedicada a la producción, transformación e industrialización de alimentos para consumo humano y animal.</p>
+                        </div>
+                      </div>
+                    </div>
+                                      </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  
+      
+   <section id="feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Nuestras Empresas</h2>
+            <span class="line"></span>
+            <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>-->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="feature-content">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                <a href="{% url 'core:produccion' %}"> <img src="{% static 'core/images/EMPR1-TRANS.png' %}" alt="team member img">
+                  <h4 class="feat-title">EMPRESA DE PRODUCCIÓN CAEJERB</h4></a>
+                  <p>Empresa dedicada a la compra, venta, comercialización, distribución, importación y exportación de todo tipo de materias primas para la elaboración de todo lo relacionado al ramo industrial textil.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="{% url 'core:transporte' %}"> <img src="{% static 'core/images/EMPR2-TRANS.png' %}" alt="team member img">
+                  <h4 class="feat-title">CORPORACIÓN DE TRANSPORTE CAEJERB</h4></a>
+                  <p>Corporación dedicada al traslado y distribución de todos los rubros de la Agenda Económica Bolivariana.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                   <a href="{% url 'core:logistica' %}"><img src="{% static 'core/images/EMPR5-TRANS.png' %}" alt="team member img">
+                  <h4 class="feat-title">COMPAÑÍA VENEZOLANA DE LOGÍSTICA</h4></a>
+                  <p>Conglomerado de compañías dedicadas a prestar servicio logístico y acompañamiento en la cadena de importación y exportación en los cuatro puertos más importantes del país.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="{% url 'core:alimentos' %}"><img src="{% static 'core/images/EMPR4-TRANS.png' %}" alt="team member img">
+                  <h4 class="feat-title">ALIMENTOS CAEJERB</h4></a>
+                   <p>Empresa dedicada a la producción, transformación e industrialización de alimentos para consumo humano y animal.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="{% url 'core:farma' %}"><img src="{% static 'core/images/EMPR3-TRANS.png' %}" alt="team member img">
+                  <h4 class="feat-title">FARMA EJERB</h4></a>
+                  <p>Empresa de Farmacia de la Caja de Ahorro del Ejército Bolivariano.</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+  
+  
+  
+  

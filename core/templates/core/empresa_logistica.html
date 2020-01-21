@@ -1,0 +1,130 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    p {
+        text-align: justify;
+    }
+</style>
+  
+  <!-- Start about  -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Sobre nosotros</h2>
+            <span class="line"></span>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+          </div>
+        </div>-->
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="why-choose-us">
+                  <h3>COMPAÑÍA VENEZOLANA DE LOGÍSTICA</h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            COMPAÑÍA VENEZOLANA DE LOGÍSTICA <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <img class="why-choose-img" src="{% static 'core/images/EMPR5-TRANS.png' %}" alt="img">
+                         <p> Somos un conglomerado de empresas dedicadas a prestar servicio logístico y acompañamiento en la cadena de importación y exportación, hacemos vida en cuatro (04)  de los puertos más importantes del país como lo son: Puerto de Maracaibo (Patio N°18), Puerto de Guanta (Patio N°16 A), Puerto de Puerto de Cabello (Patio N°02) y Puerto de la Guaira (Patio N°09, 10 y 11), ubicados en la zona primaria de Bolivariana de Puertos (BOLIPUERTOS). </p>
+
+                        
+                      </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                           Misión <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Prestar acompañamiento y servicios integrales de manera oportuna, en toda la cadena logística de importación y exportación, a la medida de las necesidades de nuestros clientes a nivel global. </p>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Visión <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Convertirse en una empresa reconocida a nivel nacional en brindar soluciones logísticas integrales con alcance mundial.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Estructura  Organizacional  <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            Servicios <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            
+                          <p>
+• Almacenamiento.<br>
+• Trasiego de Carga.<br>
+• Manejo de contenedores.<br>
+• Consolidación y desconsolidación de carga.<br>
+• Agenciamiento aduanal.<br>
+• Acarreo de carga.<br>
+• Estiba y desestiba.<br>
+• Deposito aduanero in bond.<br>
+• Suministro de los servicios logísticos en la atención de buques.<br>
+• Importación.<br>
+• Exportación.<br>
+• Flete Marítimo.<br>
+• Flete Terrestre.<br>
+• Flete Aéreo.
+ </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+  {% endblock %}

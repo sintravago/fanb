@@ -1,0 +1,402 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Start slider -->
+<section id="slider">
+  <div class="main-slider">
+    <!--<div class="single-slide">
+      <img src="assets/images/slider-1.jpg" alt="img">
+      <div class="slide-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="slide-article">
+                <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Creative Design & Best Feature</h1>
+                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="slider-img wow fadeInUp">
+                <img src="assets/images/person1.png" alt="business man">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="single-slide">
+      <a href="saldo.php"><img src="{% static 'core/images/slider-consultasaldo.jpg' %}" alt="img"></a>
+      <div class="slide-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="slide-article">
+                <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
+                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="single-slide">
+      <a href="prestamo.php"><img src="{% static 'core/images/slider-prestamo.jpg' %}" alt="img"></a>
+      <div class="slide-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="slide-article">
+                <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
+                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="single-slide">
+      <a href="tienda_virtual.php"><img src="{% static 'core/images/slider-tienda.png' %}" alt="img"></a>
+      <div class="slide-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="slide-article">
+                <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
+                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>          
+  </div>
+</section>
+<!-- End slider -->
+
+
+  <!-- Start Feature -->
+  <section id="feature">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+                        
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="feature-content">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                 <a href="saldo.php"><img src="{% static 'core/images/1Consultar-Saldo.ico' %}" alt="img">
+                  <h2 class="feat-title">SALDO</h2></a>
+                  <p>Consultar saldo de mis Haberes</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                <a href="retiro.php"><img src="{% static 'core/images/haberes.ico' %}" alt="img">
+                  <h4 class="feat-title">RETIRO</h4></a>
+                  <p>Solicitar retiro de mis Haberes</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="tienda_virtual.php"><img src="{% static 'core/images/1Ecommerce.ico' %}" alt="img">
+                 <h2 class="feat-title">TIENDA VIRTUAL</h2></a>
+                  <p>Revisar el catálogo de productos disponibles</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="prestamo.php"><img src="{% static 'core/images/Prestamo.ico' %}" alt="img">
+                  <h4 class="feat-title">PRÉSTAMOS</h4></a>
+                  <p>Solicitar Préstamo.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                  <a href="fianza.php"><img src="{% static 'core/images/1FIANZA.ico' %}" alt="img">
+                  <h4 class="feat-title">FIANZA</h4></a>
+                  <p>Solicitar Fianza a otro asociado.</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="single-feature wow zoomIn">
+                 <img src="{% static 'core/images/1Comprar-Productos.ico' %}" alt="img">
+                  <h4 class="feat-title">COMPRAR</h4>
+                  <p>Comprar productos en Línea</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Feature -->
+
+  <!-- Start about  -->
+  <!--<section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">About us</h2>
+            <span class="line"></span>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="about-content">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="our-skill">
+                  <h3>Our Skills</h3>                  
+                  <div class="our-skill-content">
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                    <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="100">
+                        <span class="progress-title">Html5</span>
+                      </div>
+                  </div>
+                  <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="85">
+                        <span class="progress-title">Css3</span>
+                      </div>
+                  </div>
+                  <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="70">
+                        <span class="progress-title">JQuery</span>
+                      </div>
+                  </div>
+                  <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="60">
+                        <span class="progress-title">wordPress</span>
+                      </div>
+                  </div>
+                  <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="40">
+                        <span class="progress-title">Php</span>
+                      </div>
+                  </div>
+                   <div class="progress">
+                      <div class="progress-bar six-sec-ease-in-out" role="progressbar" data-transitiongoal="25">
+                        <span class="progress-title">Java</span>
+                      </div>
+                  </div>
+                  </div>                  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="why-choose-us">
+                  <h3>Why Choose Us?</h3>
+                  <div class="panel-group why-choose-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Awesome Design Layout <span class="fa fa-minus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <img class="why-choose-img" src="assets/images/testi1.jpg" alt="img">
+                         <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default ">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            Quality Coding <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            Great Support <span class="fa fa-plus-square"></span>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+
+  <img src="{% static 'core/images/Casa-Bodega.jpg' %}" alt="img" width="100%"><br><br>
+
+   <section id="subscribe">
+    <div class="subscribe-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="subscribe-area">
+              <h2 class="wow fadeInUp">VISITA NUESTRA TIENDA VIRTUAL</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="about" class="about-main pad-top-100 pad-bottom-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+        <div class="title-area">
+          <h2 class="title">Nuestros Productos</h2>
+          <span class="line"></span>
+          <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>-->
+        </div>
+        <!-- Start single team member -->
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single-team-member">
+            <div class="team-member-img">
+              <img src="{% static 'core/images/tr1.png' %}" alt="team member img">
+            </div>
+            <div class="team-member-name">
+              <p>John Doe</p>
+              <span>CEO</span>
+            </div>
+            <!--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>-->
+            <a class="purchase-btn" href="#">Comprar</a>
+            <!--<div class="team-member-link">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>-->
+          </div>
+        </div>
+          <!-- Start single team member -->
+          <!-- Start single team member -->
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="single-team-member">
+            <div class="team-member-img">
+              <img src="{% static 'core/images/tr2.png' %}" alt="team member img">
+            </div>
+            <div class="team-member-name">
+              <p>Bernice Neumann</p>
+              <span>Designer</span>
+            </div>
+            <!--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>-->
+            <!--<div class="team-member-link">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>-->
+            <a class="purchase-btn" href="#">Comprar</a>
+          </div>
+        </div>
+          <!-- Start single team member -->
+          <!-- Start single team member -->
+      </div>
+      <!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="about-images">
+            <img class="about-main" src="assets/images/about-main.jpg" alt="About Main Image">
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" >
+        <div class="title-area">
+          <h2 class="title"> Menú</h2>
+          <span class="line"></span>
+        </div>
+        <section id="menu">
+            <div class="menu-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="menu-area">
+                                <p style ="margin-top: 80px;width: 180px;">Pollo a la Tiuna<br/> Pollo con tres salsa, Ensalada de Vegetales y Papas al Vapor .</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- <h3>
+          Especialidad de la casa<br/> 
+          <span>Pollo a la Tiuna</span>
+        </h3>-->        
+          <!--
+          <p> Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, Aenean commodo ligula eget dolor penatibu set magnis is parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, pellentesque eu, pretium quis, sem. quat massa quis enim. Donec vitae sapien ut libero venenatis fauci Nullam quis ante. Etiam sit amet rci eget eros. </p>
+
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>-->
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+  </div>
+  
+  <img src="{% static 'core/images/Publicidad-casa-tiuna.jpg' %}" alt="img" width="100%">
+  <section id="clients-brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="clients-brand-area">
+            <ul class="clients-brand-slide">
+              <li class="col-md-3">
+                <div class="single-brand">
+                  <img src="{% static 'core/images/EMPR1-TRANS.png' %}" alt="img">
+                </div>
+              </li>
+              <li class="col-md-3">
+                <div class="single-brand">
+                  <img src="{% static 'core/images/EMPR2-TRANS.png' %}" alt="img">
+                </div>
+              </li>
+              <li class="col-md-3">
+                <div class="single-brand">
+                  <img src="{% static 'core/images/EMPR3-TRANS.png' %}" alt="img">
+                </div>
+              </li>
+              <li class="col-md-3">
+                <div class="single-brand">
+                  <img src="{% static 'core/images/EMPR4-TRANS.png' %}" alt="img">
+                </div>
+              </li>
+              <li class="col-md-3">
+                <div class="single-brand">
+                  <img src="{% static 'core/images/EMPR5-TRANS.png' %}" alt="img">
+                </div>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

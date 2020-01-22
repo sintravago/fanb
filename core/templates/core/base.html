@@ -91,7 +91,11 @@
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="header-login">
-              <a class="login modal-form" data-target="#login-form" data-toggle="modal"  href="#"><img src="{% static 'core/images/Avatar-Usuario.ico' %}">&nbsp;&nbsp; Iniciar Sesión / Regístrate</a>
+              {% if request.user.is_authenticated %}
+                <a class="login modal-form" {% comment %} data-target="#login-form" data-toggle="modal" {% endcomment %} href="{% url 'logout' %}"><img src="{% static 'core/images/Avatar-Usuario.ico' %}">&nbsp;&nbsp; Salir</a>
+              {% else %}
+                <a class="login modal-form" {% comment %} data-target="#login-form" data-toggle="modal" {% endcomment %} href="{% url 'login' %}"><img src="{% static 'core/images/Avatar-Usuario.ico' %}">&nbsp;&nbsp; Iniciar Sesión / Regístrate</a>
+              {% endif %}
             </div>
           </div>
         </div>

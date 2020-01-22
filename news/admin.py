@@ -19,5 +19,10 @@ class newAdmin(admin.ModelAdmin):
         return ", ".join([c.name for c in obj.category.all()])
     post_category.short_description = 'Categorias'
 
+    class Media:
+        css = {
+            'all': ('news/css/custom_ckeditor.css',)
+        }
+
 admin.site.register(category, categoryAdmin)
 admin.site.register(new, newAdmin)

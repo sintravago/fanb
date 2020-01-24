@@ -27,7 +27,7 @@
                       </div>
                       <div class="blog-news-title">
                         <h2><a href="{% url 'news:new' blog.id %}">{{blog.title}}</a></h2>
-                        <p>Por <a class="blog-author" href="#">{{blog.category.all|join:", "}}</a> <span class="blog-date">|{{blog.created|date:"F d, Y"}}</span></p>
+                        <p>Por <a class="blog-author" href="{% url 'news:news' %}">{{blog.author}} {% comment %}{{blog.category.all|join:", "}}{% endcomment %}</a> <span class="blog-date">|{{blog.created|date:"F d, Y"}}</span></p>
                       </div>
                       <div class="blog-news-details">
                         <p style="text-align: justify;">{{blog.description|truncatechars:500|safe}}</p>
@@ -71,83 +71,9 @@
                       {% endfor %}
                     </ul>
                   </div>
-
-                  <!-- Start slider -->
-                  <section id="slider">
-                    <div class="main-slider1">
-                    <!--<div class="single-slide">
-                      <img src="assets/images/slider-1.jpg" alt="img">
-                      <div class="slide-content">
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                              <div class="slide-article">
-                                <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Creative Design & Best Feature</h1>
-                                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>
-                              </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                              <div class="slider-img wow fadeInUp">
-                                <img src="assets/images/person1.png" alt="business man">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>-->
-                      <div class="single-slide">
-                        <img src="{% static 'core/images/PUBLI-PRÉSTAMO.png' %}" alt="img">
-                        <div class="slide-content">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-6 col-sm-6">
-                                <div class="slide-article">
-                                  <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
-                                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="single-slide">
-                        <img src="{% static 'core/images/PUBLI-ESTADO.png' %}" alt="img">
-                        <div class="slide-content">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-6 col-sm-6">
-                                <div class="slide-article">
-                                  <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
-                                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="single-slide">
-                        <img src="{% static 'core/images/PUBLI-TIENDA.png' %}" alt="img">
-                        <div class="slide-content">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-6 col-sm-6">
-                                <div class="slide-article">
-                                  <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
-                                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>          
-                    </div>
-                  </section>
-  <!-- End slider -->               
-                  
+                  <div><img src="{% static 'core/images/PUBLI-PRÉSTAMO.png' %}" alt="img" width="100%"></div>
+                  <div><img src="{% static 'core/images/PUBLI-ESTADO.png' %}" alt="img" width="100%"></div>
+                  <div><img src="{% static 'core/images/PUBLI-TIENDA.png' %}" alt="img" width="100%"></div>
                   <div><img src="{% static 'core/images/PUBLI-CASA-TIUNA.png' %}" alt="img" width="100%"></div>
                   <!-- Start sidebar widget -->
                   <!--<div class="sidebar-widget">

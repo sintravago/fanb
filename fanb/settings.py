@@ -134,7 +134,18 @@ CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'uploads')
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+            ['Find', 'Replace', '-', 'SelectAll'],
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl','Language'],
+            ['TextColor', 'BGColor','Styles', 'Format', 'Font', 'FontSize'],
+            ['Link', 'Unlink', 'Image', 'Table'],
+            ['RemoveFormat', 'Source']
+        ],
+        'height': 'auto',
+        'width': 'auto',
     },
 }
 

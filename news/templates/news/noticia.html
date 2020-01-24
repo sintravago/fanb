@@ -20,7 +20,7 @@
                     </div>
                     <div class="blog-news-title">
                       <h2>{{blog.title}}</h2>
-                      <p>Por <a class="blog-author" href="#">{{blog.author}}</a> <span class="blog-date">|{{blog.created|date:"F d, Y"}}</span></p>
+                      <p>Por <a class="blog-author" href="{% url 'news:news' %}">{{blog.author}}</a> <span class="blog-date">|{{blog.created|date:"F d, Y"}}</span></p>
                     </div>
                     <div class="blog-news-details blog-single-details">
                       <p>{{blog.description|safe}}</p> 

@@ -25,7 +25,7 @@ SECRET_KEY = 'v2h%cg$bf$1cd0co#))@)44@70qknlz&b%7c8qkd7cumb+#z%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["caejerb.com.ve"]
 
 
 # Application definition

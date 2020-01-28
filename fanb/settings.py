@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'django_db_prefix',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +81,16 @@ WSGI_APPLICATION = 'fanb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'Caejer_KJA',
+        'USER': 'sa',
+        'PASSWORD': 'LiderUNO10102312',
+        'HOST': '172.16.212.101\SQL2008',
+        'PORT': '1433',
     }
 }
+
+DB_PREFIX = "cae_"
 
 
 # Password validation

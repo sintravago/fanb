@@ -87,6 +87,10 @@ DATABASES = {
         'PASSWORD': 'LiderUNO10102312',
         'HOST': '172.16.212.101\SQL2008',
         'PORT': '1433',
+
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server',
+        },
     }
 }
 

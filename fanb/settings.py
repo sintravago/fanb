@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'Caejer_KJA',
         'USER': 'sa',
         'PASSWORD': 'LiderUNO10102312',
-        'HOST': '172.16.212.101\SQL2008',
+        'HOST': '172.16.212.101',
         'PORT': '1433',
 
         'OPTIONS': {

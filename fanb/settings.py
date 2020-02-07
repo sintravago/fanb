@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'phone_field',
+    'servicios'
 ]
 
 MIDDLEWARE = [

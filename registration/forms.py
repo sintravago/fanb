@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
+from django.db import connection
 
 class UserCreationFormWithEmail(UserCreationForm):
     email = forms.EmailField(required=True, help_text="Requerido. 254 carácteres como máximo y debe ser válido.")
@@ -20,11 +21,12 @@ class UserCreationFormWithEmail(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['avatar', 'bio', 'link']
+        fields = ['avatar', 'bio', 'link','tlf','nacimiento']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file mt-3'}),
             'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':3, 'placeholder':'Biografía'}),
             'link': forms.URLInput(attrs={'class':'form-control mt-3', 'placeholder':'Enlace'}),
+            'nacimiento': forms.DateInput(attrs={'class':'form-control mt-3', 'placeholder':'Fecha de Nacimiento'},format ='%Y/%m/%d'),
         }
 
 
@@ -41,3 +43,14 @@ class EmailForm(forms.ModelForm):
             if User.objects.filter(email=email).exists():
                 raise forms.ValidationError("El email ya está registrado, prueba con otro.")
         return email
+
+class cedulaForm(forms.Form):
+    cedula = forms.IntegerField(required=True,help_text="Requerido.")
+
+    def clean_cedula(self):
+        with connection.cursor() as cursor:
+            cursor.execute("select cCedulaSocio from taSocios WHERE cCedulaSocio = %s", [self.cleaned_data.get("cedula")])
+            row = cursor.fetchone()
+            if not row or Profile.objects.filter(cedula=self.cleaned_data.get("cedula")):
+                raise forms.ValidationError("Cédula no valida.")
+        return self.cleaned_data.get("cedula")

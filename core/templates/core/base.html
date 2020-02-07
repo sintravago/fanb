@@ -189,7 +189,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <span class="fa fa-angle-down"></span></a>
                 <ul class="dropdown-menu" role="menu">
                 <!--<li><a href="servicios.php">Servicios</a></li> -->
-                <li><a href="saldo.php">Saldo</a></li>
+                <li><a href="{% url 'saldos' %}">Resumen Saldos</a></li>
+                <li><a href="{% url 'movimientos' %}">Movimientos</a></li>
                 <li><a href="prestamo.php">Préstamos</a></li>
                 <li><a href="fianza.php">Fianza</a></li>
                 <li><a href="retiro.php">Retiro</a></li>

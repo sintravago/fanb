@@ -25,7 +25,7 @@ SECRET_KEY = 'v2h%cg$bf$1cd0co#))@)44@70qknlz&b%7c8qkd7cumb+#z%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["caejerb.com.ve"]
+ALLOWED_HOSTS = ["caejerb.com.ve","127.0.0.1"]
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'django_db_prefix',
 ]
 
 MIDDLEWARE = [
@@ -82,20 +81,17 @@ WSGI_APPLICATION = 'fanb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'Caejer_KJA',
+        'NAME': 'CAEJER_KJA',
         'USER': 'sa',
         'PASSWORD': 'LiderUNO10102312',
         'HOST': '172.16.212.101\\SQL2008',
-        'PORT': '1433',
+        'PORT': '53105',
 
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
         },
     }
 }
-
-DB_PREFIX = "cae_"
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -134,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media files
 MEDIA_URL = '/media/'

@@ -1,11 +1,15 @@
-from .forms import UserCreationFormWithEmail, ProfileForm, EmailForm
+﻿from .forms import UserCreationFormWithEmail, ProfileForm, EmailForm, cedulaForm
 from django.views.generic import CreateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, FormView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from django.shortcuts import redirect,render
 from django import forms
 from .models import Profile
+from django.contrib.auth.models import User
+from django.db import connection
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 class SignUpView(CreateView):
@@ -19,9 +23,11 @@ class SignUpView(CreateView):
         form = super(SignUpView, self).get_form()
         # Modificar en tiempo real
         form.fields['username'].widget = forms.TextInput(
-            attrs={'class':'form-control mb-2', 'placeholder':'Nombre de usuario'})
+            attrs={'class':'form-control mb-2', 'placeholder':'Nombre de usuario', 'value': self.kwargs['username'], 'readonly':'readonly' })
+        form.fields['username'].help_text = " "
         form.fields['email'].widget = forms.EmailInput(
             attrs={'class':'form-control mb-2', 'placeholder':'Dirección email'})
+        form.fields['email'].help_text = " "
         form.fields['password1'].widget = forms.PasswordInput(
             attrs={'class':'form-control mb-2', 'placeholder':'Contraseña'})
         form.fields['password2'].widget = forms.PasswordInput(
@@ -56,3 +62,15 @@ class EmailUpdate(UpdateView):
         form.fields['email'].widget = forms.EmailInput(
             attrs={'class':'form-control mb-2', 'placeholder':'Email'})
         return form
+
+class cedulaView(FormView):
+    template_name = 'registration/cedula.html'
+    form_class = cedulaForm
+    #{% url 'polls:vote' question.id %} = reverse_lazy('signup')
+
+    def get_success_url(self):
+        # find your next url here
+        self.request.POST
+        cedula_socio = self.request.POST.get('username',None) # here method should be GET or POST.
+        #return redirect('signup', 'cedula':cedula)
+        return reverse_lazy('signup', kwargs={'username': cedula_socio}) # what url you wish to return

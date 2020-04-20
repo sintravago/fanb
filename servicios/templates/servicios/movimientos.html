@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'servicios/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'servicios/main.css' %} ">
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-area">
+                    <h2 class="title">Movimientos</h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="wrap-table100">
+                    <div class="table">
+                        <div class="row header cont">
+                            <div class="cell">Concepto</div>
+                            <div class="cell">Monto</div>
+                            <div class="cell">Cuenta</div>
+                        </div>
+                        {% if movimientos %}
+                            {% for items in movimientos %}
+                                <div class="row cont">
+                                    {% for item in items %}
+                                        {% if forloop.counter == 1 or forloop.counter == 3 %}
+                                            <div class="cell">{{ item }}</div>
+                                        {% else %}
+                                            {% load humanize %}
+                                            <div class="cell">{{ item|intcomma }}</div>
+                                        {% endif %}                            
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+ <br/>
+{% endblock %}

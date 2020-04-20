@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+  {% if request.user.is_authenticated %}
+    <script>window.location.href = '/accounts/profile/'; </script>
+  {% endif %}
+<style>.errorlist{color:red;}</style>
+<main role="main" style = "height:800px">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-12 mx-auto mb-5">
+            <center style="margin-top: 5%">
+                <form action="" method="post">{% csrf_token %}
+                    <h3>Registrar</h3> <br/>
+                    {{form.as_p}}
+                    <p><input type="submit" class="btn purchase-btn btn-block" value="Verificar" style ="width:20%"></p>
+                </form>
+            </center>
+        </div>
+    </div>
+</main>
+ <br/>
+{% endblock %}

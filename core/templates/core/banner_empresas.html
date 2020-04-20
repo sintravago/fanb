@@ -1,0 +1,24 @@
+<section id="clients-brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="clients-brand-area">
+            <ul class="clients-brand-slide">
+              {% load static %}
+              {% for empresa in empresas %}
+                <li class="col-md-3">
+                      
+                      <div class="single-brand">
+                          <a href= "{% url 'empresas:empresa' empresa.id %}"><img src="{{ empresa.logo.url }}" alt="img"></a>
+                      </div>
+                  
+                </li>
+              {% empty %}
+
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

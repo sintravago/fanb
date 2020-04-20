@@ -6,13 +6,11 @@
     <script>window.location.href = '/accounts/profile/'; </script>
   {% endif %}
 <style>.errorlist{color:red;}</style>
-<main role="main">
+<main role="main" style = "height:800px">
   <div class="container">
     <div class="row mt-3">
-      <div class="col-md-5 mx-auto mb-5">
-        {% if 'register' in request.GET %}
-          <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
-        {% endif %}
+      <div class="col-md-12 mx-auto mb-5">
+        <center style="margin-top: 5%">
         <form action="" method="post">{% csrf_token %}
           <h3 class="mb-4">Iniciar sesión</h3>
           {% if form.non_field_errors %}
@@ -20,19 +18,24 @@
           {% endif %}
           <p>
             <input type="text" name="username" autofocus maxlength="254" required
-              id="id_username" class="form-control" placeholder="Nombre de usuario"/>
+              id="id_username" class="form-control" placeholder="Cédula" style ="width:30%"/>
           </p>
           <p>
             <input type="password" name="password" required
-              id="id_password" class="form-control" placeholder="Contraseña"/>
+              id="id_password" class="form-control" placeholder="Contraseña" style ="width:30%"/>
           </p>
-          <p><input type="submit" class="btn purchase-btn btn-block" value="Acceder"></p>
+          {% if 'register' in request.GET %}
+            <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
+          {% endif %}
+          <p><input type="submit" class="btn purchase-btn btn-block" value="Acceder" style ="width:25%"></p>
         </form>
+        <p>&nbsp;</p>
         <p>
           ¿Ha olvidado su clave? Puede restaurarla <a href="{% url 'password_reset' %}">aquí</a>.
         </p>
-        <p>
-          ¿Desea Crear usuario? <a href="{% url 'signup' %}">aquí</a>.
+        <br/><br/>
+        </center>
+          <b>Nota importante: </b> Para poder ingresar a las secciones de Saldos, Préstamos, Fianza y Retiro de haberes, es necesario que inicies sesión. Si aún no te has registrado, crea tu usuario  <a href="{% url 'cedula' %}">aquí</a>.
         </p>
       </div>
     </div>

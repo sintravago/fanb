@@ -25,23 +25,27 @@ SECRET_KEY = 'v2h%cg$bf$1cd0co#))@)44@70qknlz&b%7c8qkd7cumb+#z%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["caejerb.com.ve","127.0.0.1"]
+ALLOWED_HOSTS = ["caejerb.com.ve"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'registration',
+    'registration.apps.RegistrationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'django.contrib.humanize',
+    'core.apps.CoreConfig',
     'news.apps.NewsConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'phone_field',
+    'servicios',
+    'empresas.apps.EmpresasConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,16 +84,23 @@ WSGI_APPLICATION = 'fanb.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pycaejerb',
+        'USER': 'pyuser',
+        'PASSWORD': 'C@3j3rb2020*!*',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+    'caejerb': {
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'CAEJER_KJA',
         'USER': 'sa',
         'PASSWORD': 'LiderUNO10102312',
         'HOST': '172.16.212.101\\SQL2008',
         'PORT': '53105',
-
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
-        },
+        }
     }
 }
 
@@ -138,7 +149,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_ROOT = "/var/www/html/pyfonpres/media/"
 
 
-CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'uploads')
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -154,6 +167,22 @@ CKEDITOR_CONFIGS = {
         ],
         'height': 'auto',
         'width': 'auto',
+        'extraPlugins': ','.join([
+            'uploadimage', # the upload image feature
+            # your extra plugins here
+            'div',
+            'autolink',
+            'autoembed',
+            'embedsemantic',
+            'autogrow',
+            # 'devtools',
+            'widget',
+            'lineutils',
+            'clipboard',
+            'dialog',
+            'dialogui',
+            'elementspath'
+        ]),
     },
 }
 

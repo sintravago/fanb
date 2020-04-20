@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'servicios/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'servicios/main.css' %} ">
+<style>.errorlist{color:red;}</style>
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-area">
+                    <h2 class="title"> saldos </h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <a class="purchase-btn" href="{% url 'pdfcuenta' %}">Descargar PDF</a>
+            </div>
+            <div class="col-md-12">
+                <br/>
+            </div>
+            <div class="col-md-12">
+                <div class="wrap-table100">
+                    <div class="table">
+                        <div class="row header cont">
+                            <div class="cell">Haberes</div>
+                            <div class="cell">Prestamos disponible</div>
+                            <div class="cell">Disponible fianzas</div>
+                            <div class="cell">saldo</div>
+                            <div class="cell">Deudas</div>
+                            <div class="cell">fecha</div>
+                        </div>
+                        {% if saldos %}
+                            <div class="row cont">
+                                {% for item in saldos %}
+                                    {% if forloop.counter == 6 %}
+                                        <div class="cell">{{ item|date:"D d M Y" }}</div>
+                                    {% else %}
+                                        {% load humanize %}
+                                        <div class="cell">{{ item|intcomma }}</div>
+                                    {% endif %}                            
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+ <br/>
+{% endblock %}

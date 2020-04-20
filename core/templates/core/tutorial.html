@@ -1,0 +1,76 @@
+<title>article</title>
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Solicitud de Prestamo{% endblock %}
+{% block content %}
+    {% load static %}
+<!-- Start Service -->
+  <section id="service">
+    <div class="container" style = "height:550px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Tutorial administrativo</h2>
+            <span class="line"></span>
+            <br/>
+            {% comment %} <p>Para solicitar su retiro total de la Caja de Ahorro del Ejército Bolivariano, debe escribir un correo electrónico a info@caejerb.com.ve, solicitando su desvinculación y adjuntando la siguiente documentación.</p> {% endcomment %}
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-archive-area">
+          <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="blog-archive-left">
+                  <article class="blog-news-single">
+                    <div class="blog-news-title">
+                    </div>
+                      <p>A través del <a href="http://caejerb.com.ve/admin-site/" target="_new">Panel Administrador de Caejerb</a>, podrás subir noticias, cambiar el menú del día, sustituir la información que está en las empresas e incorporar publicidad en páginas específicas.</p>
+                    <br/>
+                    <h3>
+                      Menú de día: 
+                    </h3>
+                    <ol>
+                      <li>Para sustituir el menú del día, solo deberás darle clic en “modificar”. <br/><br/> <img src="{% static 'core/images/tutorial/editar-menu.jpg' %}"><br/><br/></li>
+                      <li>Luego hacer clic en “Menú del día”. <br/><br/> <img src="{% static 'core/images/tutorial/editar-menu2.jpg' %}"><br/><br/></li>
+                      <li>Una vez dentro del artículo. Sustituir la información y darle clic a Grabar. <br/><br/> <img src="{% static 'core/images/tutorial/editar-menu3.jpg' %}" width="900px"><br/><br/></li>
+                    </ol>
+                    <h3>
+                      Administrar noticias: 
+                    </h3>
+                    <ol>
+                      <li>Para agregar una nueva noticia, deberás ir al panel administrador y dar clic en “Añadir”. <br/><br/><img src="{% static 'core/images/tutorial/noticia1.png' %}"><br/><br/></li>
+                      <li>Agrega el título, descripción del artículo (noticia que se subirá a la página).<br/><br/><img src="{% static 'core/images/tutorial/noticia2.png' %}" width="900px"><br/><br/></li>
+                      <li>Para cargar la imagen principal del artículo, debes darle clic en “Seleccionar imagen”. <br/><br/><img src="{% static 'core/images/tutorial/noticia6.png' %}"><br/><br/> </li>
+                      <li>Busca en tu computadora la imagen que vas a cargar en la noticia y dale <b>clic en abrir.</b></li>
+                      <li><b>Importante:</b> la proporción de la imagen debe ser como máximo de 750 px de ancho.</li>
+                      <li>Luego, selecciona la categoría a la que pertenece la noticia. <br/><br/><img src="{% static 'core/images/tutorial/noticia7.png' %}" ><br/><br/> </li>
+                      <li>Seleccionar el nombre del autor del artículo y dale clic a “Grabar”. <br/><br/><img src="{% static 'core/images/tutorial/noticia5.png' %}" width="900px" ><br/><br/></li>
+                      <h3>
+                      Editar una noticia existente: 
+                    </h3>
+                      <li>Para editar una noticia existente, solo deberás dar clic en modificar y aparecerán las noticias existentes. <br/><br/><img src="{% static 'core/images/tutorial/noticia8.png' %}"><br/><br/></li>
+                      <li>Haz clic en el nombre de la noticia que deseas modificar y realiza los cambios deseados.<br/><br/><img src="{% static 'core/images/tutorial/noticia9.png' %}" width="900px" ><br/><br/></li>
+<li>Una vez finalizado, dale clic en “Grabar”.<br/><br/><img src="{% static 'core/images/tutorial/noticia10.png' %}" width="900px" ><br/><br/></li>
+                  </article>
+                </div>
+              </div>
+<div class="col-md-2"></div>
+            </div>
+          </div>
+          {% comment %} <div class="service-content">
+            <div class="row">
+              <p>Imprima, rellene y firme la planilla.
+                Entregue en la Oficina de Nómina de la Caja de Ahorro del Ejército Bolivariano, ubicada en la Avenida Las Escuelas. Edificio Caja de Ahorro del Ejército. Sector Fuerte Tiuna. El Valle, Caracas.</p>
+              <p><a class="purchase-btn" href="/static/core/descargas/PRESTAMO2.pdf">Descargar Planilla</a></p>
+              <br/>
+              <p>Solicita el apoyo de otro asociado de Caejerb y pide tu fianza.</p>
+            </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service -->
+{% endblock %}
+{% block footerstyle %}  position:fixed;bottom: 0; {% endblock %}

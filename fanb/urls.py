@@ -24,7 +24,12 @@ urlpatterns = [
     path('admin-site/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
+    path('servicios/', include('servicios.urls')),
+    path('empresas/', include('empresas.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
+
+admin.site.site_header = 'Administración CAEJERB'
 
 if settings.DEBUG:
     from django.conf.urls.static import static

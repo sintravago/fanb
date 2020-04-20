@@ -5,13 +5,10 @@ core_patterns = ([
     path('', views.index, name ='index'),
     path('caejerb/', views.caejerb, name ='caejerb'),
     path('contacto/', views.contacto, name ='contacto'),
-    path('empresas/', views.empresas, name ='empresas'),
-    path('empresas/alimentos/', views.empresa_alimentos, name ='alimentos'),
-    path('empresas/produccion/', views.empresa_produccion, name ='produccion'),
-    path('empresas/transporte/', views.empresa_transporte, name ='transporte'),
-    path('empresas/logistica/', views.empresa_logistica, name ='logistica'),
-    path('empresas/farma/', views.empresa_farma, name ='farma'),
-], 'core')
+    path('paso-paso/', views.paso_paso, name ='paso-paso'),
+    path('tutorial/', views.tutorial, name ='tutorial'),
+    path('tutorial_tienda/', views.tutorial_tienda, name ='tutorial_tienda'),
+    ], 'core')
 
 urlpatterns = [
     path('', include(core_patterns)),

@@ -1,9 +1,8 @@
 {% extends 'core/base.html' %}
 {% block content %}
 {% load static %}
-
 <!-- Start slider -->
-<section id="slider">
+<section id="slider"> 
   <div class="main-slider">
     <!--<div class="single-slide">
       <img src="assets/images/slider-1.jpg" alt="img">
@@ -26,8 +25,9 @@
         </div>
       </div>
     </div>-->
+    <a href="{% url 'core:paso-paso' %}" target="_new">
     <div class="single-slide">
-      <a href="saldo.php"><img src="{% static 'core/images/slider-consultasaldo.jpg' %}" alt="img"></a>
+      <img src="{% static 'core/images/Slider-destacado-paso-a-paso.jpg' %}" alt="img">
       <div class="slide-content">
         <div class="container">
           <div class="row">
@@ -42,8 +42,11 @@
         </div>
       </div>
     </div>
+    </a>
+
+    <a href="{% url 'saldos' %}" target="_new">
     <div class="single-slide">
-      <a href="prestamo.php"><img src="{% static 'core/images/slider-prestamo.jpg' %}" alt="img"></a>
+      <img src="{% static 'core/images/slider-consultasaldo.jpg' %}" alt="img">
       <div class="slide-content">
         <div class="container">
           <div class="row">
@@ -58,22 +61,43 @@
         </div>
       </div>
     </div>
-    <div class="single-slide">
-      <a href="tienda_virtual.php"><img src="{% static 'core/images/slider-tienda.png' %}" alt="img"></a>
-      <div class="slide-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="slide-article">
-                <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
-                <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
-                <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+    </a>
+    <a href="{% url 'prestamo' %}">
+      <div class="single-slide">
+        <img src="{% static 'core/images/slider-prestamo.jpg' %}" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>          
+    </a>
+    <a href="http://tienda.caejerb.com.ve/">
+      <div class="single-slide">
+        <img src="{% static 'core/images/slider-tienda.jpg' %}" alt="img">
+        <div class="slide-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="slide-article">
+                  <!--<h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">We are Best Team & Support you always</h1>
+                  <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                  <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#">Read More</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+    </a>       
   </div>
 </section>
 <!-- End slider -->
@@ -93,35 +117,35 @@
             <div class="row">
               <div class="col-md-4 col-sm-6">
                 <div class="single-feature wow zoomIn">
-                 <a href="saldo.php"><img src="{% static 'core/images/1Consultar-Saldo.ico' %}" alt="img">
+                 <a href="{% url 'saldos' %}" target="_new"><img src="{% static 'core/images/1Consultar-Saldo.ico' %}" alt="img">
                   <h2 class="feat-title">SALDO</h2></a>
                   <p>Consultar saldo de mis Haberes</p>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="single-feature wow zoomIn">
-                <a href="retiro.php"><img src="{% static 'core/images/haberes.ico' %}" alt="img">
+                <a href="{% url 'retiro' %}"><img src="{% static 'core/images/haberes.ico' %}" alt="img">
                   <h4 class="feat-title">RETIRO</h4></a>
                   <p>Solicitar retiro de mis Haberes</p>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="single-feature wow zoomIn">
-                  <a href="tienda_virtual.php"><img src="{% static 'core/images/1Ecommerce.ico' %}" alt="img">
+                  <a href="http://tienda.caejerb.com.ve"><img src="{% static 'core/images/1Ecommerce.ico' %}" alt="img">
                  <h2 class="feat-title">TIENDA VIRTUAL</h2></a>
                   <p>Revisar el catálogo de productos disponibles</p>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="single-feature wow zoomIn">
-                  <a href="prestamo.php"><img src="{% static 'core/images/Prestamo.ico' %}" alt="img">
+                  <a href="{% url 'prestamo' %}"><img src="{% static 'core/images/Prestamo.ico' %}" alt="img">
                   <h4 class="feat-title">PRÉSTAMOS</h4></a>
                   <p>Solicitar Préstamo.</p>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
                 <div class="single-feature wow zoomIn">
-                  <a href="fianza.php"><img src="{% static 'core/images/1FIANZA.ico' %}" alt="img">
+                  <a href="{% url 'fianza' %}"><img src="{% static 'core/images/1FIANZA.ico' %}" alt="img">
                   <h4 class="feat-title">FIANZA</h4></a>
                   <p>Solicitar Fianza a otro asociado.</p>
                 </div>
@@ -260,7 +284,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="subscribe-area">
-              <h2 class="wow fadeInUp">VISITA NUESTRA TIENDA VIRTUAL</h2>
+              <a href= "http://tienda.caejerb.com.ve/"><h2 class="wow fadeInUp">VISITA NUESTRA TIENDA VIRTUAL</h2></a>
             </div>
           </div>
         </div>
@@ -281,14 +305,14 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="single-team-member">
             <div class="team-member-img">
-              <img src="{% static 'core/images/tr1.png' %}" alt="team member img">
+              <img src="http://tienda.caejerb.com.ve/wp-content/uploads/2020/02/Ropa-de-caza-camuflaje-uniforme-t-ctico-G3-Army-Combat-Suit-Sets-Airsoft-Paintball-Multicam-Cargo.jpg_q50-600x600.jpg" alt="team member img">
             </div>
             <div class="team-member-name">
-              <p>John Doe</p>
-              <span>CEO</span>
+              <p>Ropa de caza</p>
+              {% comment %} <span>CEO</span> {% endcomment %}
             </div>
             <!--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>-->
-            <a class="purchase-btn" href="#">Comprar</a>
+            <a class="purchase-btn" href="http://tienda.caejerb.com.ve/producto/ropa-de-camuflaje/">Ver artículo</a>
             <!--<div class="team-member-link">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -301,11 +325,11 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="single-team-member">
             <div class="team-member-img">
-              <img src="{% static 'core/images/tr2.png' %}" alt="team member img">
+              <img src="http://tienda.caejerb.com.ve/wp-content/uploads/2020/02/Computadora-VIT-600x600.png" alt="team member img">
             </div>
             <div class="team-member-name">
-              <p>Bernice Neumann</p>
-              <span>Designer</span>
+              <p>Computadora VIT I7</p>
+              {% comment %} <span>Designer</span> {% endcomment %}
             </div>
             <!--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>-->
             <!--<div class="team-member-link">
@@ -313,7 +337,7 @@
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
             </div>-->
-            <a class="purchase-btn" href="#">Comprar</a>
+            <a class="purchase-btn" href="http://tienda.caejerb.com.ve/producto/computador-vit/" >Ver artículo</a>
           </div>
         </div>
           <!-- Start single team member -->
@@ -337,8 +361,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="menu-area">
-                                <p style ="margin-top: 80px;width: 180px;">Pollo a la Tiuna<br/> Pollo con tres salsa, Ensalada de Vegetales y Papas al Vapor .</p>
+                            <div class="menu-area" style="margin-top: 80px;width: 180px;margin-right: 45px;">
+                                {{ menu.description|safe }}
                             </div>
                         </div>
                     </div>
@@ -362,41 +386,6 @@
   </div>
   
   <img src="{% static 'core/images/Publicidad-casa-tiuna.jpg' %}" alt="img" width="100%">
-  <section id="clients-brand">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="clients-brand-area">
-            <ul class="clients-brand-slide">
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="{% static 'core/images/EMPR1-TRANS.png' %}" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="{% static 'core/images/EMPR2-TRANS.png' %}" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="{% static 'core/images/EMPR3-TRANS.png' %}" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="{% static 'core/images/EMPR4-TRANS.png' %}" alt="img">
-                </div>
-              </li>
-              <li class="col-md-3">
-                <div class="single-brand">
-                  <img src="{% static 'core/images/EMPR5-TRANS.png' %}" alt="img">
-                </div>
-              </li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include 'core/banner_empresas.html' %}
+  
 {% endblock %}

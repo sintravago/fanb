@@ -2,9 +2,9 @@ from django.urls import include,path
 from . import views
 
 news_patterns = ([
-    path('news/', views.news, name ='news'),
-    path('news/category/<int:category_id>/', views.categorys, name ='categorys'),
-    path('news/<int:new_id>/', views.blog, name ='new')
+    path('noticias/', views.news, name ='news'),
+    path('noticias/categoria/<int:category_id>/', views.categorys, name ='categorys'),
+    path('noticias/<int:new_id>/', views.blog, name ='new')
 ], 'news')
 
 urlpatterns = [

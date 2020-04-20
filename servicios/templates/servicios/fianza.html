@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Solicitud de Prestamo{% endblock %}
+{% block content %}
+    {% load static %}
+<!-- Start Service -->
+  <section id="service">
+    <div class="container" style = "height:550px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title">Solicitud de Fianza</h2>
+            <span class="line"></span>
+            <br/>
+            <p>Solicita hasta cuatro fiadores para la adjudicación de un Préstamo de Reserva Activa.</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="blog-archive-area">
+          <div class="row">
+            <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="blog-archive-left">
+                  <article class="blog-news-single">
+                    <div class="blog-news-title">
+                      {% comment %} <h2>All about writing story</h2> {% endcomment %}
+                    </div>
+                    <p>Imprima, rellene y firme la planilla.
+                Entregue en la Oficina de Nómina de la Caja de Ahorro del Ejército Bolivariano, ubicada en la Avenida Las Escuelas. Edificio Caja de Ahorro del Ejército. Sector Fuerte Tiuna. El Valle, Caracas.</p>
+              <center><p><a target="_new" class="purchase-btn" href="/static/core/descargas/PRESTAMO3.pdf">Descargar Planilla</a></p></center>
+                  </article>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+          {% comment %} <div class="service-content">
+            <div class="row">
+              <p>Imprima, rellene y firme la planilla.
+                Entregue en la Oficina de Nómina de la Caja de Ahorro del Ejército Bolivariano, ubicada en la Avenida Las Escuelas. Edificio Caja de Ahorro del Ejército. Sector Fuerte Tiuna. El Valle, Caracas.</p>
+              <p><a class="purchase-btn" href="/static/core/descargas/PRESTAMO2.pdf">Descargar Planilla</a></p>
+              <br/>
+              <p>Solicita el apoyo de otro asociado de Caejerb y pide tu fianza.</p>
+            </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service -->
+{% endblock %}
+{% block footerstyle %}  position:fixed;bottom: 0; {% endblock %}

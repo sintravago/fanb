@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 ﻿from .forms import UserCreationFormWithEmail, ProfileForm, EmailForm, cedulaForm
+=======
+from .forms import UserCreationFormWithEmail, ProfileForm, EmailForm, cedulaForm
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 from django.views.generic import CreateView
 from django.views.generic.edit import UpdateView, FormView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+<<<<<<< HEAD
 from django.shortcuts import redirect,render
+=======
+from django.shortcuts import redirect
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 from django import forms
 from .models import Profile
 from django.contrib.auth.models import User
@@ -34,6 +42,26 @@ class SignUpView(CreateView):
             attrs={'class':'form-control mb-2', 'placeholder':'Repite la contraseña'})
         return form
 
+    def post(self, request, *args, **kwargs):
+        """
+        Handle POST requests: instantiate a form instance with the passed
+        POST variables and then check if it's valid.
+        """
+        
+        form = self.get_form()
+        if form.is_valid():
+            self.object = form.save()
+            usuario = User.objects.get(username=request.POST.get("username"))
+            with connection.cursor() as cursor:
+                cursor.execute("update registration_profile set cedula=%s where id = %s", [kwargs['cedula'],usuario.id])
+                cursor.execute("update dbo.registration_profile set tlf=cCelular, nacimiento=cFechaNacimiento from dbo.taSocios where cedula = %s", [usuario.id])
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+        
+    def form_valid(self, form):
+        """If the form is valid, redirect to the supplied URL."""
+        return HttpResponseRedirect(self.get_success_url())
 
 @method_decorator(login_required, name='dispatch')
 class ProfileUpdate(UpdateView):
@@ -71,6 +99,12 @@ class cedulaView(FormView):
     def get_success_url(self):
         # find your next url here
         self.request.POST
+<<<<<<< HEAD
         cedula_socio = self.request.POST.get('username',None) # here method should be GET or POST.
         #return redirect('signup', 'cedula':cedula)
         return reverse_lazy('signup', kwargs={'username': cedula_socio}) # what url you wish to return
+=======
+        cedula_socio = self.request.POST.get('cedula',None) # here method should be GET or POST.
+        #return redirect('signup', 'cedula':cedula)
+        return reverse_lazy('signup', kwargs={'cedula': cedula_socio}) # what url you wish to return
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48

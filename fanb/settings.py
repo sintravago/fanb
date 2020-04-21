@@ -44,8 +44,12 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'phone_field',
+<<<<<<< HEAD
     'servicios',
     'empresas.apps.EmpresasConfig',
+=======
+    'servicios'
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 ]
 
 MIDDLEWARE = [

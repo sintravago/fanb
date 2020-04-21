@@ -25,8 +25,11 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
     path('servicios/', include('servicios.urls')),
+<<<<<<< HEAD
     path('empresas/', include('empresas.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+=======
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 ]
 
 admin.site.site_header = 'Administración CAEJERB'

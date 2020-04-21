@@ -1,4 +1,5 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.db import connections
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -6,19 +7,36 @@ from registration.models import Profile
 from django.conf import settings
 from easy_pdf.views import PDFTemplateView
 from django.http import Http404
+=======
+from django.db import connection
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from registration.models import Profile
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 
 # Create your views here.
 @login_required
 def saldos(request):
     perfil = Profile.objects.get(user=request.user)
+<<<<<<< HEAD
     with connections['caejerb'].cursor() as cursor:
         cursor.execute("SELECT CONVERT(DECIMAL(11,2),ISNULL(SUM(a.cSaldo), 0)) AS Haberes,CONVERT(DECIMAL(11,2),dbo.L1fn_KJA_SaldoSocio(a.cCodigoSocio, 1)) AS DisponibilidadPtmo, CONVERT(DECIMAL(11,2),dbo.L1fn_KJA_SaldoSocio(a.cCodigoSocio,2)) AS DisponibilidadFianza, CONVERT(DECIMAL(11,2),dbo.L1fn_KJA_SaldoSocio(a.cCodigoSocio,0)) AS Saldo,CONVERT(DECIMAL(11,2),(SELECT ISNULL(SUM(b.cSaldoActual), 0) AS Deudas FROM taPrestamos as b WHERE (b.cStatusPrestamo = 0) AND (b.cCodigoSocio = a.cCodigoSocio)) + (SELECT ISNULL(SUM(- c.cSaldo), 0) AS Haberes  FROM taSaldos AS c WHERE (c.cCuenta LIKE '0202%%') AND (c.cCodigoSocio = a.cCodigoSocio))) AS Deudas,getdate() AS Fecha FROM taSaldos as a WHERE (a.cCuenta LIKE '0201%%') and (a.cCodigoSocio = %s) group by a.cCodigoSocio", [perfil.cedula])
         row = cursor.fetchone()
     return render(request,"servicios/saldos.html",{'saldos':row})
+=======
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT Haberes,Deudas,DisponiblePmto, DisponibleFianza,Saldo,Fecha FROM [CAEJER_KJA].[dbo].[L1sp_KJA_ResumenSaldos]() where cedula = %s", [perfil.cedula])
+        row = cursor.fetchone()
+        if row:
+            return render(request,"servicios/saldos.html",{'saldos':row})
+        else:
+            return render(request,"servicios/saldos.html")
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 
 @login_required
 def movimientos(request):
     perfil = Profile.objects.get(user=request.user)
+<<<<<<< HEAD
     with connections['caejerb'].cursor() as cursor:
         cursor.execute("SELECT Concepto,CONVERT(DECIMAL(11,2),Monto),Cuenta FROM L1sp_KJA_EstadoDeCuentaWeb(%s)", [perfil.cedula])
         rows = cursor.fetchall()
@@ -77,3 +95,14 @@ def retiro(request):
 def error_500(request):
     return render(request,'servicios/500.html')
 
+=======
+    with connection.cursor() as cursor:
+        cursor.execute("select cCodigoSocio from taSocios WHERE cCedulaSocio = %s", [perfil.cedula])
+        row = cursor.fetchone()
+        cursor.execute("SELECT Concepto,Monto,Cuenta FROM L1sp_KJA_EstadoDeCuentaWeb(%s)", [row[0]])
+        rows = cursor.fetchall()
+        if row:
+            return render(request,"servicios/movimientos.html",{'movimientos':rows})
+        else:
+            return render(request,"servicios/movimientos.html")
+>>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48

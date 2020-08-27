@@ -1,0 +1,229 @@
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style type="text/css">
+            body {
+                font-family: "Helvetica", "sans-serif";
+                color: #333333;
+            }
+        </style>
+    </head>
+    <body>
+    {% load static %}
+        <div id="content">
+            <div class="main">
+				<table width = "90%" align="center">
+                    <thead>
+                        <tr>
+                            <td width = "20%"><img class="why-choose-img" src="{% static 'core/images/logo.png' %}" style="width: 200px;" alt="img"></td>
+                            <td valign=top width = "60%">
+                                <center>
+                                    <p><b>REPÚBLICA BOLIVARIANA DE VENEZUELA<br/>
+                                    MINISTERIO DEL PODER POPULAR PARA LA DEFENSA<br/>
+                                    EJÉRCITO BOLIVARIANO<br/>
+                                    CAJA DE AHORRO DEL EJÉRCITO BOLIVARIANO</b></p>
+                                    <br/>
+                                    <p><b>SOLICITUD DE PRÉSTAMO DE RESERVA ACTIVA</b></p>
+                                </center>
+                            </td>
+                            <td valign=bottom width = "20%">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <br/><br/>
+				<table width = "100%" border=1>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td><center><b>ASOCIACIÓN CIVIL CAJA DE <br/> AHORRO DEL EJÉRCITO <br/> BOLIVARIANO<br></b>Rif.: J-29446284-7</center></td>
+                            <th>PLANILLA DE FIANZA</th>
+							<td valign=top>FECHA: <br/><center>{{ result.0.created|date:"d/m/Y" }}</center></td>
+                        </tr>
+                    </tbody>
+                </table>
+				{% load humanize %}
+                <table width = "100%" border=1>
+					<thead>
+						 <tr style="padding:2px;">
+                            <th colspan = 3 bgcolor=#CDCDCD>DATOS DEL AFIANZADO</th>
+                        </tr>
+					</thead>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td width = "25%">Grado:<br/>{{ datos.0|slice:":5" }}</td>
+                            <td width = "50%">Apellidos y Nombres:<br/>{{ datos.0|slice:"5:" }}</td>
+                            <td width = "25%">Cédula de Identidad:<br/>{{ datos.1|intcomma }}</td>
+                        </tr>
+                        <tr style="padding:2px;">
+							<td>Estado:<br/>{{ result.0.estado }}</td>
+                            <td>Ciudad:<br/>{{ result.0.ciudad }}</td>                            
+                            <td colspan = 2 valign=top>Telf. (Cel):<br/>{% if datos.3 %} {{ datos.3 }} {% endif %} {% if datos.4 %} {% if datos.3 %} / {% endif %} {{ datos.4 }} {% endif %} {% if result.0.user.profile.tlf %} {% if datos.4 or datos.3 %} / {% endif %} {{ result.0.user.profile.tlf }} {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width = "100%" border=1>
+					<thead>
+						<tr style="padding:2px;">
+                            <td colspan = 6 bgcolor=#CDCDCD><p><b>DATO DE LOS FIADORES</b></p></td>
+                        </tr>
+					</thead>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td width = "15%"  valign=top>1er FIADOR: </td>
+                            <td width = "35%" colspan=2 valign=top>MONTO A AVALAR: <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result.0.monto1|intcomma }}</td>
+                            <td width = "15%"  valign=top>2do FIADOR:</td>
+                            <td width = "35%" colspan=2 valign=top>MONTO A AVALAR:<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if result.0.monto2 %}{{ result.0.monto2|intcomma }}{% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td colspan=2>APELLIDOS Y NOMBRES: <br> {{ result.0.nombre1 }}</td>
+                            <td>GRADO: <br> {{ result.0.grado1 }}</td>
+                            <td colspan=2>APELLIDOS Y NOMBRES: <br> {% if result.0.nombre2 %} {{ result.0.nombre2 }}{% endif %}</td>
+                            <td>GRADO: <br> {% if result.0.grado2 %}{{ result.0.grado2 }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td>CÉDULA: <br/> {{ result.0.cedula1|intcomma }} </td>
+                            <td colspan=2>TELEFONOS: <br/>{{ result.0.telefono1 }}</td>
+                            <td>CÉDULA: <br/> {% if result.0.cedula2 %} {{ result.0.cedula2|intcomma }} {% endif %}</td>
+                            <td colspan=2>TELEFONOS:<br/> {% if result.0.telefono2 %}{{ result.0.telefono2 }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td width = "15%"  valign=top>3er FIADOR: </td>
+                            <td width = "35%" colspan=2 valign=top>MONTO A AVALAR: <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if result.0.monto3 %} {{ result.0.monto3|intcomma }}{% endif %}</td>
+                            <td width = "15%"  valign=top>4to FIADOR:</td>
+                            <td width = "35%" colspan=2 valign=top>MONTO A AVALAR:<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if result.0.monto4 %} {{ result.0.monto4|intcomma }}{% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td colspan=2>APELLIDOS Y NOMBRES: <br> {% if result.0.nombre3 %}{{ result.0.nombre3 }} {% endif %}</td>
+                            <td>GRADO: <br> {% if result.0.grado3 %} {{ result.0.grado3 }} {% endif %}</td>
+                            <td colspan=2>APELLIDOS Y NOMBRES: <br> {% if result.0.nombre4 %} {{ result.0.nombre4 }} {% endif %}</td>
+                            <td>GRADO: <br> {% if result.0.grado4 %} {{ result.0.grado4 }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td>CÉDULA: <br/>{% if result.0.cedula3 %} {{ result.0.cedula3|intcomma }} {% endif %}</td>
+                            <td colspan=2>TELEFONOS: <br/>{% if result.0.telefono3 %} {{ result.0.telefono3 }} {% endif %}</td>
+                            <td>CÉDULA: <br/> {% if result.0.cedula4 %} {{ result.0.cedula4|intcomma }} {% endif %}</td>
+                            <td colspan=2>TELEFONOS:<br/> {% if result.0.telefono4 %} {{ result.0.telefono4 }} {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+				<br/><br/><br/><br/>
+                <center><b><u>CONDICIONES GENERALES DE LA FIANZA</u></b></center>
+				<p style="text-align: justify;">
+Declaro (ramos): Me (nos) constituyo (imos) en Fiador (es) solidario (s) principal (es) pagader (es) de esta obligación a favor de (CAEJERB), conviniendo en que (nos) corresponderá informarme (nos) de cualquier mora y prórroga de esta obligación y expresamente en que la Caja no está obligada a notificármela (nosla). Si no informásemos de cualquier mora y prórroga se considerará que como fiador (es) la (s) acepto (amos) tácitamente y por consiguiente, mantengo (emos) mi (nuestra) responsabilidad solidaria hasta la definitiva y total cancelación de esta obligación. Desde luego, como fiador (es) podré (mos) pagar completamente la obligación afianzada y obtener la subrogación de la Caja para cargarme (nos) el valor de este préstamo y sus intereses en el caso de su vencimiento o mora de mi (s) ahorros (s), que yo (nosotros) pueda (podamos) tener en la Caja.
+La presente fianza está sujeta a la cláusula “SIN AVISO Y SIN PROTESTO”. 
+Para todos los efectos de esta obligación, sus derivados y consecuencia, queda elegido como domicilio especial la ciudad de Caracas, a la Jurisdicción de cuyos tribunales declaramos expresamente someternos. 
+Artículo 45 ”… debiendo presentar hasta un máximo de cuatro (04) fiadores (asociados), con garantía del cuarenta por ciento (40%) de sus haberes y cuyas disponibilidades en la asociación sean suficientes para responder por la obligación principal…”
+Artículo 47: “Los haberes del fiador, en la proporción establecida, quedará comprometidos y se irán liberando consecutiva y proporcionalmente a medida que el préstamo sea pagado por el Asociado beneficiario del préstamo”.
+Artículo 48: “Cuando un Asociado deje de pertenecer a CAEJERB, los saldos bloqueados del fiador se considerarán de plazo vencidos y de pago inmediato.
+Artículo 49: “Ningún Asociado podrá servir nuevamente de fiador si tiene pendiente dos (02) avales concedidos que no hayan sido liberados totalmente”. 
+REGLAMENTO DE AHORRO Y PRÉSTAMO DE LA CAJA DE AHORRO DEL EJÉRCITO
+Artículo 322: “… El individuo que hubiere falsificado o alterado, total o parcialmente, alguna escritura, carta y otros géneros de papeles de carácter privado, de modo que haciendo él, u otro uso de dichos documentos, pueda causarse en perjuicio al público o a particulares, será castigado con prisión de seis a dieciocho meses…”
+Artículo 323: “… Todo el que hubiere hecho uso o de alguna manera se hubiese aprovechado de algún acto falso, aunque no haya tenido parte en la falsificación, será castigado con las penas respectivas establecidas en los artículos 320, si se trata de acto público y 322, si se trata de acto privado…”
+<b>CODIGO PENAL DE VENEZUELA</b>
+				</p>
+				<br/><br/><br/><br/><br/><br/><br/><br/>
+				<center><b>OBSERVACIONES</b></center>
+				<table width = "80%" border=1 align=center>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td width = "25%">1er Fiador:<br/></td>
+                            <td width = "75%">{% if result.0.observaciones1 %}{{ result.0.observaciones1|safe }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td width = "25%">2do Fiador:<br/></td>
+                            <td width = "75%">{% if result.0.observaciones2 %}{{ result.0.observaciones2|safe }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td width = "25%">3er Fiador:<br/></td>
+                            <td width = "75%">{% if result.0.observaciones3 %}{{ result.0.observaciones3|safe }} {% endif %}</td>
+                        </tr>
+						<tr style="padding:2px;">
+                            <td width = "25%">4to Fiador:<br/></td>
+                            <td width = "75%">{% if result.0.observaciones4 %}{{ result.0.observaciones4|safe }} {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+				<br/><br/><br/><br/><br/><br/><br/>
+				<table width = "80%" align=center>
+					<tbody>
+						<tr>
+							<td width="50%">
+								<center>FIRMA PRIMER FIADOR</center>
+								<table width = "70%"  border=1 align="center">
+									<tbody>
+										<tr>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<center>HUELLAS DACTIALRES DEL FIADOR</center>
+							</td>
+							<td width="50%">
+								<center>FIRMA SEGUNDO FIADOR</center>
+								<table width = "70%" border=1 align="center">
+									<tbody>
+										<tr>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<center>HUELLAS DACTIALRES DEL FIADOR</center>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/><br/><br/><br/><br/><br/><br/><br/>
+				<table width = "80%" align=center>
+					<tbody>
+						<tr>
+							<td width="50%">
+								<center>FIRMA TERCER FIADOR</center>
+								<table width = "70%"  border=1 align="center">
+									<tbody>
+										<tr>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<center>HUELLAS DACTIALRES DEL FIADOR</center>
+							</td>
+							<td width="50%">
+								<center>FIRMA CUARTO FIADOR</center>
+								<table width = "70%" border=1 align="center">
+									<tbody>
+										<tr>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+											<td width = "50%"><br/><br/><br/><br/><br/><br/></td>
+										</tr>
+									</tbody>
+								</table>
+								<br/>
+								<center>HUELLAS DACTIALRES DEL FIADOR</center>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/><br/><br/><br/><br/>
+				<table width = "80%" align=center>
+					<tbody>
+						<tr>
+							<td width="50%" style="text-align:center">
+								<h3>Firma y sello del Analista </h3>
+							</td>
+							<td width="50%" style="text-align:center">
+								<h3>Firma del Afianzado</h3>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+        </div>
+    </body>
+</html>

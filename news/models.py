@@ -15,7 +15,7 @@ class category(models.Model):
     
     class Meta:
         verbose_name = 'categoría'
-        verbose_name_plural = 'categorias'
+        verbose_name_plural = 'categorías'
         ordering = ['name']
 
 class new(models.Model):

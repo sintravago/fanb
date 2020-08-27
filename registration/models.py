@@ -3,10 +3,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from phone_field import PhoneField
-<<<<<<< HEAD
 from django.db import connections
-=======
->>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 
 def custom_upload_to(instance, filename):
     old_instance = Profile.objects.get(pk=instance.pk)
@@ -22,10 +19,7 @@ class Profile(models.Model):
     link = models.URLField(max_length=200, null=True, blank=True)
     tlf = PhoneField(null=True, blank=True)
     nacimiento = models.DateField(default="1900-01-01")
-<<<<<<< HEAD
     nombre = models.CharField(max_length=150 , verbose_name='Nombre', null=True, blank=True)
-=======
->>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 
     class Meta:
         verbose_name = 'Perfil'

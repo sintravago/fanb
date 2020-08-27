@@ -1,0 +1,135 @@
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style type="text/css">
+            body {
+                font-family: "Helvetica", "sans-serif";
+                color: #333333;
+            }
+        </style>
+    </head>
+    <body>
+    {% load static %}
+        <div id="content">
+            <div class="main">
+                <table width = "90%" align="center">
+                    <thead>
+                        <tr>
+                            <td width = "20%"><img class="why-choose-img" src="{% static 'core/images/logo.png' %}" style="width: 200px;" alt="img"></td>
+                            <td valign=top width = "60%">
+                                <center>
+                                    <p><b>REPÚBLICA BOLIVARIANA DE VENEZUELA<br/>
+                                    MINISTERIO DEL PODER POPULAR PARA LA DEFENSA<br/>
+                                    EJÉRCITO BOLIVARIANO<br/>
+                                    CAJA DE AHORRO DEL EJÉRCITO BOLIVARIANO</b></p>
+                                    <br/>
+                                    <p><b>SOLICITUD DE PRÉSTAMO TIENDA TEMPORADA</b></p>
+                                </center>
+                            </td>
+                            <td valign=bottom width = "20%">
+                                <p>N° CONTROL <u>&nbsp;{{ prestamo_id }}&nbsp;</u></p>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+                <br/>
+				{% load humanize %}
+                <table width = "100%" border=1>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td colspan = 4 bgcolor=#CDCDCD><p><b>Datos Personales</b></p></td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td width = "20%">Grado:<br/>{{ datos.0|slice:":5" }}</td>
+                            <td width = "35%">Apellidos y Nombres:<br/>{{ datos.0|slice:"5:" }}</td>
+                            <td width = "25%">Cédula de Identidad:<br/>{{ datos.1|intcomma }}</td>
+                            <td width = "20%">Fecha de Solicitud:<br/>{{ result.0.created|date:"d/m/Y" }}</td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td colspan = 2 valign=top>Correo Electrónico:<br/>{% if datos.2 %} {{ datos.2 }} {% else %} {{ result.0.user.email }} {% endif %}</td>
+                            <td colspan = 2 valign=top>Telf. (Cel):<br/>{% if datos.3 %} {{ datos.3 }} {% endif %} {% if datos.4 %} {% if datos.3 %} / {% endif %} {{ datos.4 }} {% endif %} {% if result.0.user.profile.tlf %} {% if datos.4 or datos.3 %} / {% endif %} {{ result.0.user.profile.tlf }} {% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width = "100%" border=1>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td colspan = 5 bgcolor=#CDCDCD><p><b>Datos Laborales</b></p></td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td width = "35%">Unidad/Dependencia donde Labora:<br/>{{ result.0.unidad }}</td>
+                            <td width = "18%">Ciudad:<br/>{{ result.0.ciudad }}</td>
+                            <td width = "18%">Estado:<br/>{{ result.0.estado }}</td>
+                            <td width = "14%">Telf. Ofic.:<br/>{{ result.0.tlfofi }}</td>
+                            <td width = "15%">Telf. Celular:<br/>{{ result.0.faxofi }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width = "100%" border=1>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td colspan = 3 bgcolor=#CDCDCD><p><b>Datos del Préstamo</b></p></td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <th width = "35%" colspan = 3>Cantidad Solicitada</th>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td colspan = 2>En Letras: {{ result.0.cantidad_letras }}</td>
+                            <td>En numeros : {{ result.0.cantidad_numeros|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:2px;" width='20%'>Préstamos Ordinario</td>
+                            <td width='35%'>
+                                <table border = 1 width = "100%"> 
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding:2px;">Corto Plazo (12 meses) {% if result.0.prestamo_tienda.id == 1 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:2px;">Mediano Plazo (24 meses) {% if result.0.prestamo_tienda.id == 2 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <th valign=bottom rowspan=2> FIRMA ___________________________</th>
+                        </tr>
+						<tr>
+							<td colspan=2 > Nombre Casa Comercial: {{ result.0.casa_comercial }}</td>
+						</tr>
+                    </tbody>
+                </table>
+                <table width = "100%" border=1>
+                    <tbody>
+                        <tr style="padding:2px;">
+                            <td colspan = 5 bgcolor=#CDCDCD><p><b>Análisis Verificación de Documentos y Decisión del Comité de Crédito</b></p></td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td width = "16%" valign=top><center>Total de haberes:<br/>{{ result.0.total_haberes|intcomma }}</center></td>
+                            <td width = "16%" valign=top><center>80% haberes:<br/>{{ haberes8|intcomma }}</center></td>
+                            <td width = "24%" valign=top><center>Cantidad a Solicitar:<br/>{{ result.0.cantidad_solicitar|intcomma }}<br/></center></td>
+                            <td width = "16%" valign=top><center>Cantidad Aprobada:<br/>{{ result.0.cantidad_aprobada|intcomma }}<br/></center></td>
+                            <td width = "28%" valign=middle><center>Capacidad de pago   Si {% if result.0.capacidad_pago.id == 1 %}<u> &nbsp;X&nbsp; </u> {% else %} ___ {% endif %} No {% if result.0.capacidad_pago.id == 2 %} <u>&nbsp;X&nbsp;</u>  {% else %} ___ {% endif %}</center></td>
+                        </tr>
+                        <tr style="padding:2px;">
+                            <td colspan = 2>
+                                <p>Opinión del Análista de Préstamo:<br/>
+                                    Favorable {% if result.0.opinion_analista.id == 1 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}<br/>
+                                    Desfavorable {% if result.0.opinion_analista.id == 2 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}
+                                </p>
+                            </td>
+                            <td valign=top><center> Firma del Análista de Préstamo</center></td>
+                            <td> 
+                                <p>Opinión del Gerente:<br/>
+                                    Favorable {% if result.0.opinion_gerente.id == 1 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}<br/>
+                                    Desfavorable {% if result.0.opinion_gerente.id == 2 %} <img src="{% static 'servicios/check.png' %}" width=15px /> {% else %} <img src="{% static 'servicios/uncheck.png' %}" width=15px /> {% endif %}<br/>
+                                </p>
+                            </td>
+                            <td valign=top><center> Firma Gerente de Ahorro y Préstamo </center></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><b><u>NOTA:</u> El cobro de la primera cuota correspondiente a este préstamo se efectuará uno o dos meses despúes a la fecha en que sea cargado, además si el Asociado realiza una amortización o liquida la totalidad de la deuda , quedará pendiente dos (02) o tres (03) cuotas por trámite administrativo ante Nómina del Ejército Bolivariano, así como también es requisito indispensable consignar el comprobante bancario original para la cancelación del préstamo, en caso contrario no tendrá efecto el depósito realizado. </b></p>
+            </div>
+        </div>
+    </body>
+</html>

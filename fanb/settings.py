@@ -25,7 +25,7 @@ SECRET_KEY = 'v2h%cg$bf$1cd0co#))@)44@70qknlz&b%7c8qkd7cumb+#z%d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["caejerb.com.ve"]
+ALLOWED_HOSTS = ["caejerb.com.ve","www.caejerb.com.ve"]
 
 
 # Application definition
@@ -44,12 +44,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'phone_field',
-<<<<<<< HEAD
     'servicios',
     'empresas.apps.EmpresasConfig',
-=======
-    'servicios'
->>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 ]
 
 MIDDLEWARE = [
@@ -100,7 +96,7 @@ DATABASES = {
         'NAME': 'CAEJER_KJA',
         'USER': 'sa',
         'PASSWORD': 'LiderUNO10102312',
-        'HOST': '172.16.212.101\\SQL2008',
+        'HOST': '10.104.29.7\SQL2008',
         'PORT': '53105',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
@@ -132,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Caracas'
 
 USE_I18N = True
 

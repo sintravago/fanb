@@ -2,7 +2,6 @@
 {% load static %}
 {% block title %}Registro{% endblock %}
 {% block content %}
-<<<<<<< HEAD
     {% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'servicios/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'servicios/main.css' %} ">
@@ -50,34 +49,6 @@
             </div>
         </div>
     </div>
-=======
-<style>.errorlist{color:red;}</style>
-<main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-5 mx-auto mb-5">
-          <h3>Saldos - Resumen</h3> <br/>
-          <table>
-            <tr>
-              <th>Haberes</th>
-              <th>Deudas</th>
-              <th>Prestamos disponible</th>
-              <th>Disponible fianzas</th>
-              <th>saldo</th>
-              <th>fecha</th>
-            </tr>
-            {% if row %}
-              <tr>
-                {% for item in row %}
-                  <td>{{ item }}</td>
-                {% endfor %}
-              </tr>
-            {% endif%}
-          </table>
-      </div>
-    </div>
-  </div>
->>>>>>> a5d0f1a747ea6f162875048cd71404464a306c48
 </main>
  <br/>
 {% endblock %}
